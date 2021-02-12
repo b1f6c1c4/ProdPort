@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$1" = "hard" ]; then
+    setxkbmap -option ''
+    exit
+fi;
+
+pkill xcape
+# xmodmap ~/.Xmodmap
+setxkbmap -option 'caps:ctrl_modifier'
+xcape -e 'Caps_Lock=Escape'
+fcitx &
